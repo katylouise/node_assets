@@ -4,7 +4,7 @@
   "description": "This is a early prototype of a styleguide.",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp"
+    "start": "gulp watch"
   },
   "repository": {
     "type": "git",
