@@ -2,9 +2,9 @@
   "name": "ukpds_web_ui",
   "version": "1.0.0",
   "description": "This is a early prototype of a styleguide.",
-  "main": "main.js",
+  "main": "gulpfile.js",
   "scripts": {
-    "start": "node main.js"
+    "start": "gulp"
   },
   "repository": {
     "type": "git",
