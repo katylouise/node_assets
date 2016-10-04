@@ -19,7 +19,6 @@
 
      // Utility modules
      plumber        = require('gulp-plumber'), //Prevent pipe breaking caused by errors from gulp plugins
-     notify         = require('gulp-notify'), // Sends message notification
      rename         = require('gulp-rename'), // Rename files
      clean          = require('gulp-clean'), // A gulp plugin for removing files and folders
      sourcemaps     = require('gulp-sourcemaps'), // Source map support for Gulp
@@ -90,8 +89,7 @@ gulp.task('styles', function() {
         .pipe(cssnano())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest( distCSS ))
-        .pipe(browserSync.reload({stream:true}))
-        .pipe(notify({ message: 'TASK: "styles" completed!', onLast: true }));
+        .pipe(browserSync.reload({stream:true}));
 });
 
 gulp.task('watch-styles', function() {
@@ -100,8 +98,7 @@ gulp.task('watch-styles', function() {
 
 gulp.task('clean-styles', function() {
     gulp.src([cleanCSS], {read: false} )
-    .pipe(clean())
-    .pipe(notify({message: 'TASK: "clean-styles" completed!', onLast: true }));
+    .pipe(clean());
 });
 
 
@@ -132,8 +129,7 @@ gulp.task('scripts', function() {
         .pipe( rename({ suffix: '.min' }) )
         .pipe( sourcemaps.write( '.' ) )
         .pipe( gulp.dest( distJS ) )
-        .pipe(browserSync.reload({stream:true}))
-        .pipe( notify( { message: 'TASK: "scripts" completed!', onLast: true } ) );
+        .pipe(browserSync.reload({stream:true}));
 });
 
 gulp.task('watch-scripts', function() {
@@ -142,8 +138,7 @@ gulp.task('watch-scripts', function() {
 
 gulp.task('clean-scripts', function() {
     gulp.src([ cleanJS ], {read: false})
-        .pipe(clean())
-        .pipe(notify({ message: 'TASK: "clean-scripts" completed!', onLast: true }));
+        .pipe(clean());
 });
 
 
